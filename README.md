@@ -1,5 +1,5 @@
 # CryptoMetrics | Ubuntu Edition 
-A repo dedicated for evaluating the performance of CRYSTAL - Kyber and ECDH based on execution_time in ns, cpu utilisation and memory usage.
+This project benchmarks and compares the performance of post-quantum and classical cryptographic algorithms—Kyber (ML-KEM 1024) and ECDH (P-256). The primary goal is to evaluate their execution time, CPU usage, and memory consumption under consistent test conditions on an Ubuntu EC2 instance.
 ## Relevant files/folders
 Below describes the relevant cpp files for benchmarking.
 ### Relevant`.cpp`files 
@@ -18,14 +18,20 @@ Below describes the relevant cpp files for benchmarking.
     - Contains **OpenSSL** library : `(openssl-3.4.0)` validated by `git log --oneline -1` found in `commit: 98acb6b02839c609ef5b837794e08d906d965335`
     - Contains **LibOQS** standard`(Import ML-KEM from mlkem-native/PQ code package (#2041) found in `commit: a554b36dd321e94c276e85c025f350c70740f328`
 
-## Executing the executables
-Due to the configuration set up, once the project is built, it is easy to execute and generate csv files required.
 
-- Navigate to build via cl 
+## Installation
+Obtain the AMI Image link found in the Dissertation (Appendix D, Section D.21). Follow User Guide (Appendix B, Section B.1)
+
+## Executing the executables
+Once EC2 is set up, it is easy to execute and generate csv files required.
+
+### Generating output of ecdh benchmark
+- Navigate to `build` folder via cl 
   - `./ecdh 1000`
   - `./ecdh_ram 1000`
 
-- Navigate to build via cl
+### Generating output of ecdh benchmark
+- Navigate to `build` via cl
   - `./kyber Kyber1024 1000`
   - `./kyber_ram Kyber1024 1000`
 
